@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.recuperacionmvvm.R
-import com.example.recuperacionmvvm.ui.theme.BotonLogin
+import com.example.recuperacionmvvm.ui.theme.BotonLoginColor
 import com.example.recuperacionmvvm.viewmodel.LoginViewModel
 
 @Composable
@@ -39,7 +39,7 @@ fun LoginScreen(
             confirmButton = {
                 Button(
                     onClick = { viewModel.dismissError() },
-                    colors = ButtonDefaults.buttonColors(containerColor = BotonLogin)
+                    colors = ButtonDefaults.buttonColors(containerColor = BotonLoginColor)
                 ) {
                     Text("Aceptar")
                 }
@@ -100,7 +100,7 @@ fun LoginScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(48.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = BotonLogin),
+                colors = ButtonDefaults.buttonColors(containerColor = BotonLoginColor),
                 enabled = !isLoading
             ) {
                 if (isLoading) {

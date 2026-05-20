@@ -18,7 +18,7 @@ class LoginViewModel : ViewModel() {
 
     fun login(email: String, psw: String, onSuccess: () -> Unit) {
         if (email.isBlank() || psw.isBlank()) {
-            _errorDialog.value = "Por favor, rellena todos los campos"
+            _errorDialog.value = "Rellena todos los campos"
             return
         }
 

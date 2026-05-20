@@ -1,31 +1,43 @@
 package com.example.recuperacionmvvm.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation3.runtime.entryProvider
 import androidx.navigation3.runtime.rememberNavBackStack
 import androidx.navigation3.ui.NavDisplay
+import com.example.recuperacionmvvm.ui.screens.HomeScreen
 import com.example.recuperacionmvvm.ui.screens.LoginScreen
+import com.example.recuperacionmvvm.ui.screens.NuevoJuegoScreen
 
 @Composable
 fun GestionNavegacion() {
-    val backStack = rememberNavBackStack(initialKey = Routes.Login)
+    val backStack = rememberNavBackStack(Routes.Login)
 
     NavDisplay(
-        backstack = backStack,
-        entryProvider = { key ->
-            when (key) {
-                is Routes.Login -> {
-                    LoginScreen(
-                        onLoginSuccess = {
-                            backStack.push(Routes.Home)
+        backStack = backStack,
+        onBack = { if (backStack.size > 1) backStack.removeAt(backStack.size - 1) },
+        entryProvider = entryProvider {
+            entry<Routes.Login> {
+                LoginScreen(
+                    onLoginSuccess = {
+                        backStack.add(Routes.Home)
+                    }
+                )
+            }
+            entry<Routes.Home> {
+                HomeScreen(
+                    onNavigateToNuevoJuego = {
+                        backStack.add(Routes.NuevoJuego)
+                    }
+                )
+            }
+            entry<Routes.NuevoJuego> {
+                NuevoJuegoScreen(
+                    onBack = {
+                        if (backStack.size > 1) {
+                            backStack.removeAt(backStack.size - 1)
                         }
-                    )
-                }
-                is Routes.Home -> {
-
-                }
-                is Routes.NuevoJuego -> {
-
-                }
+                    }
+                )
             }
         }
     )
