@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "402149288773",
+    "project_id": "recuperacionmvvm",
+    "storage_bucket": "recuperacionmvvm.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402149288773:android:e7b2ae3c6329c1a73aec2c",
+        "android_client_info": {
+          "package_name": "com.example.recuperacionmvvm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBU5oVcqdLmMHDN77-v-d1EwAh7bXfaK8M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
