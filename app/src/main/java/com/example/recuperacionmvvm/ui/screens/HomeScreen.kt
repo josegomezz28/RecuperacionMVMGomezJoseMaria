@@ -92,8 +92,8 @@ fun JuegoCard(juego: Juego, onDelete: () -> Unit) {
                         .background(
                             color = when {
                                 juego.nota < 5 -> Color.Red
-                                juego.nota < 7 -> Color(0xFFFFA500) // Naranja
-                                else -> Color(0xFF27D21F) // VerdeExamen
+                                juego.nota < 7 -> Color(0xFFFFA500)
+                                else -> Color(0xFF27D21F)
                             }
                         ),
                     contentAlignment = Alignment.Center
@@ -141,7 +141,7 @@ fun JuegoCard(juego: Juego, onDelete: () -> Unit) {
                         "xbox" -> R.drawable.xbox
                         else -> null
                     }
-                    
+
                     iconRes?.let {
                         Image(
                             painter = painterResource(id = it),
@@ -155,7 +155,6 @@ fun JuegoCard(juego: Juego, onDelete: () -> Unit) {
                     Icon(imageVector = Icons.Default.Delete, contentDescription = "Eliminar")
                 }
             }
-
             Text(
                 text = juego.descripcion,
                 fontSize = 12.sp,

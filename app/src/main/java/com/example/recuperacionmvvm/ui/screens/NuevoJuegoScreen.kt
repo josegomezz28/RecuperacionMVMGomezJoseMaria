@@ -20,6 +20,7 @@ import com.example.recuperacionmvvm.model.Juego
 import com.example.recuperacionmvvm.ui.theme.BotonLoginColor
 import com.example.recuperacionmvvm.viewmodel.NuevoJuegoViewModel
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NuevoJuegoScreen(
